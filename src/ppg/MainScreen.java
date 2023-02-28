@@ -41,17 +41,17 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JComboBox;
 
-public class ppg_it_cse {
+public class MainScreen {
 
 	protected static final Color Color = null;
-	private JFrame frame;
-	private JTextField t1;
-	private JTextField t2;
-	private JTextField t3;
-	private JTextField t4;
-	private JTextField t5;
-	private JTextField amount;
-	private JTextField amtPaid;
+	public JFrame frame;
+	public JTextField t1;
+	public JTextField t2;
+	public JTextField t3;
+	public JTextField t4;
+	public JTextField t5;
+	public JTextField amount;
+	public JTextField amtPaid;
 	private final Action action = new SwingAction();
 
 	/**
@@ -61,7 +61,7 @@ public class ppg_it_cse {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ppg_it_cse window = new ppg_it_cse();
+					MainScreen window = new MainScreen();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -73,7 +73,7 @@ public class ppg_it_cse {
 	/**
 	 * Create the application.
 	 */
-	public ppg_it_cse() {
+	public MainScreen() {
 		initialize();
 	}
 
@@ -106,6 +106,12 @@ public class ppg_it_cse {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				
+				//change a focus to next text field when click the neter the button
+				
+				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+					t2.requestFocus();
+				}
+				
 				
 			}
 		});
@@ -122,6 +128,19 @@ public class ppg_it_cse {
 		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		t2 = new JTextField();
+		t2.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				
+				//change focus to next text field
+				if (e.getKeyCode() == KeyEvent.VK_ENTER)
+				{
+					
+					t3.requestFocus();
+				}
+				
+			}
+		});
 		t2.setSelectionColor(new Color(128, 0, 128));
 		t2.setForeground(new Color(128, 0, 128));
 		t2.setFont(new Font("Tahoma", Font.BOLD, 18));
@@ -134,6 +153,16 @@ public class ppg_it_cse {
 		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		t3 = new JTextField();
+		t3.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				
+				if(e.getKeyCode() == KeyEvent.VK_ENTER)
+				{
+					t4.requestFocus();
+				}
+			}
+		});
 		t3.setSelectionColor(new Color(128, 0, 128));
 		t3.setForeground(new Color(128, 0, 128));
 		t3.setFont(new Font("Tahoma", Font.BOLD, 18));
@@ -146,6 +175,17 @@ public class ppg_it_cse {
 		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		t4 = new JTextField();
+		t4.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				
+				if(e.getKeyCode() == KeyEvent.VK_ENTER)
+				{
+					t5.requestFocus();
+				}
+				
+			}
+		});
 		t4.setSelectionColor(new Color(128, 0, 128));
 		t4.setForeground(new Color(128, 0, 128));
 		t4.setFont(new Font("Tahoma", Font.BOLD, 18));

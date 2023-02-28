@@ -16,6 +16,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
+import javax.swing.JDesktopPane;
 
 public class confirm {
 
@@ -49,11 +51,12 @@ public class confirm {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 255, 0));
 		frame.getContentPane().setForeground(new Color(255, 255, 0));
 		frame.setBounds(100, 100, 407, 277);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JButton deletebutton = new JButton("DELETE");
+		JButton deletebutton = new JButton("CANCEL");
 		deletebutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -80,6 +83,13 @@ public class confirm {
 		JButton btnConfirm = new JButton("CONFIRM");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				InsertData insert = new InsertData();
+				try {
+					insert.insert();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnConfirm.addMouseListener(new MouseAdapter() {
