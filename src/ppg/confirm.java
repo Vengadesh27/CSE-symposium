@@ -53,12 +53,13 @@ public class confirm {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 0));
 		frame.getContentPane().setForeground(new Color(255, 255, 0));
-		frame.setBounds(100, 100, 407, 277);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(600,300,407, 277);
+		
 		
 		JButton deletebutton = new JButton("CANCEL");
 		deletebutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		deletebutton.addMouseListener(new MouseAdapter() {
@@ -83,14 +84,18 @@ public class confirm {
 		JButton btnConfirm = new JButton("CONFIRM");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InsertData insert = new InsertData();
+				
+				InsertData in =  new InsertData();
 				try {
-					insert.insert();
+					in.insert();
+				    frame.dispose();
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			}
+				
+		}
+			
 		});
 		btnConfirm.addMouseListener(new MouseAdapter() {
 			@Override
