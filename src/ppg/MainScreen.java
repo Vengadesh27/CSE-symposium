@@ -54,12 +54,12 @@ public class MainScreen {
 	protected static final Color Color = null;
 	public JFrame frame;
 	static public JTextField t1;
-	public JTextField t2;
-	public JTextField t3;
-	public JTextField t4;
-	public JTextField t5;
-	public JTextField amt;
-	public JTextField amtPaid;
+	public static JTextField t2;
+	public static JTextField t3;
+	public static JTextField t4;
+	public static JTextField t5;
+	public static JTextField amt;
+	public static JTextField amtPaid;
 	
 	static String name;
 	static String collage;

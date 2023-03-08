@@ -88,6 +88,12 @@ public class confirm {
 				InsertData in =  new InsertData();
 				try {
 					in.insert();
+					MainScreen.t1.setText("");
+					MainScreen.t2.setText("");
+					MainScreen.t3.setText("");
+					MainScreen.t4.setText("");
+					MainScreen.t5.setText("");
+					MainScreen.amt.setText("");
 				    frame.dispose();
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
